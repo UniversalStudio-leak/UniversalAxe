@@ -1,0 +1,76 @@
+# Plugin recompiled by NaulbiMIX | Sponsored by FlatiCommunity (https://t.me/flaticommunity)
+# Specially publication for https://teletype.in/@naulbimix/rumine
+#
+# Плагин разработан командой кодеров UniversalStudio для бесплатного использования.
+# Если Вы обнаружите какой-либо баг, незамедлительно сообщите нам.
+# Vk: vk.com/universalstudio
+# Site: u-studio.su
+
+# Права:
+# uaxes.give - Доступ к команде /axe give
+# uaxes.reload - Доступ к команде /axe reload
+
+disable-worlds:
+    - 'disable-world'
+
+axes:
+    axe1:
+        item:
+            type: gold_axe
+            title: '&6Метательный топор'
+            lore:
+                - ''
+                - '&8| &fМетательный топор'
+                - ''
+                - '&7> &fЛетит &a6 &fсек.'
+                - '&7> &fУрон &c25 &fединиц.'
+                - ''
+        damage: 10 # Дамаг
+        time: 6 # Время полёта топора
+        particle: flame # Партикл когда топор врезался об что то (https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Particle.html)
+        sound: BLOCK_ANVIL_PLACE # Звук когда топор врезался (https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html)
+        diminish: true # Убавлять топор на -1 если игрок использовал его
+        effects: # Эффекты которые налаживаются в кого прилетел топор
+            - 'POISON:1:10' # Тип эффекта : уровень : время (в секундах)
+            - 'SLOW:1:20'
+    axe2:
+        item:
+            type: diamond_axe
+            title: '&eУлучшенный метательный топор'
+            lore:
+                - ''
+                - '&8| &fУлучшенный метательный топор'
+                - ''
+                - '&7> &fЛетит &a15 &fсек.'
+                - '&7> &fУрон &c50 &fединиц.'
+                - ''
+        damage: 15
+        time: 15
+        particle: flame
+        sound: BLOCK_ANVIL_PLACE
+        diminish: true
+        effects:
+            - 'POISON:3:10'
+            - 'SLOW:3:20'
+            - 'WITHER:2:10'
+            - 'HUNGER:2:10'
+            - 'WEAKNESS:2:10'
+
+messages:
+    prefix: '&6UniversalAxe &8| &f'
+    no-allowed: 'Нет доступных команд.'
+    no-permission: 'У вас нет прав.'
+    unknown: 'Неизвестная команда.'
+    only-players: 'Команда только для игроков.'
+    player-null: 'Игрок не найден.'
+    axe-null: 'Топор не найден.'
+    axe-nohit: 'Вы никуда не попали, ваш топор был возвращен.'
+    axe-hit: 'Вы попали в &c%name%'
+    give:
+        usage: '&6/axe give <игрок> <топор> &f- Выдать игроку топор'
+        gived: 'Топор успешно выдан.'
+        player-gived: 'Вам был выдан топор: &6%name%'
+    reload:
+        usage: '&6/axe reload &f- Перезагрузить конфиг'
+        reloaded: 'Конфиг перезагружен.'
+        
